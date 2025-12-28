@@ -73,7 +73,7 @@ export function Admin() {
             
             // Check if the email matches our expected admin email
             const adminEmail = session.user.email.toLowerCase();
-            if (adminEmail !== 'mamuka_khoshtaria@yahoo.com') {
+            if (adminEmail !== 'futkaradzegiorgi@gmail.com') {
               console.warn('Unauthorized email in admin session:', adminEmail);
               navigate('/admin/login');
               return;
