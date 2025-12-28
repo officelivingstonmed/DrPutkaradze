@@ -1,6 +1,6 @@
 export const en = {
   header: {
-    title: 'Dr. Khoshtaria',
+    title: 'Dr. Putkaradze',
   },
   nav: {
     about: 'About',
@@ -11,7 +11,7 @@ export const en = {
   },
   education: {
     title: 'Educational Resources',
-    subtitle: 'Curated video content to help you better understand women\'s health',
+    subtitle: 'Curated content to help you better understand traumatology and orthopedics',
     georgian: {
       title: 'Educational Resources in Georgian',
       watchVideo: 'Watch Video'
@@ -26,47 +26,47 @@ export const en = {
     }
   },
   hero: {
-    title: 'Dr. Mamuka Khoshtaria',
-    subtitle: 'Renowned Obstetrician-Gynecologist with over 40 years of expertise in women\'s health',
+    title: 'Dr. Giorgi Putkaradze',
+    subtitle: 'Renowned Specialist in Trauma-Orthopedics',
     cta: 'Book Appointment',
   },
   stats: {
     childbirths: {
-      number: '20,000+',
-      text: 'Successful Childbirths',
+      number: '5,000+',
+      text: 'Successful Surgeries',
     },
     complications: {
-      number: '2,000+',
-      text: 'Complicated Cases Managed',
+      number: '2,500+',
+      text: 'Joint Replacements',
     },
     surgeries: {
-      number: '3,000+',
-      text: 'Complex Surgeries',
+      number: '1,000+',
+      text: 'Complex Case Re-implantations',
     },
     experience: {
-      number: '40+',
+      number: '10+',
       text: 'Years of Experience',
     },
   },
   expertise: {
     title: 'Expertise & Specializations',
-    subtitle: 'With decades of experience in obstetrics and gynecology, Dr. Khoshtaria has successfully handled thousands of cases, from routine deliveries to complex surgical procedures.',
+    subtitle: 'With years of experience in trauma-orthopedics, Dr. Giorgi Putkaradze has successfully treated thousands of patients both conservatively and with complex surgical interventions.',
     services: {
       obstetrics: {
-        title: 'Obstetrics Care',
-        description: 'Comprehensive pregnancy care, from prenatal to postnatal services, with expertise in handling both routine and high-risk pregnancies.',
+        title: 'Traumatology Services',
+        description: 'Diagnosis and treatment according to AO methodological guidelines: bone fractures, dislocations, sprains, ligament and tendon injuries — both household and sports injuries.',
       },
       surgery: {
-        title: 'Gynecologic Surgery',
-        description: 'Specialized in complex gynecologic procedures, including oncologic and urogynecologic surgeries.',
+        title: 'Orthopedic Services',
+        description: 'Arthrosis, arthritis, joint pain, movement restriction, evaluation and treatment of inflammatory and degenerative processes, endoprosthetics of all major joints.',
       },
       health: {
-        title: "Women's Health",
-        description: "Dedicated to providing comprehensive women's healthcare services across all life stages.",
+        title: 'Complex Case Management',
+        description: 'Reconstructive surgery using revision reimplantation techniques.',
       },
       additional: {
-        title: 'Additional Services',
-        description: 'Offering specialized services including fertility treatments, minimally invasive procedures, and preventive care consultations.',
+        title: 'Conservative Treatment',
+        description: 'Immobilization, injection therapy, proper planning of physical activity, individual rehabilitation and recovery programs.',
       },
     },
   },
@@ -77,18 +77,18 @@ export const en = {
     mobile: 'Mobile',
     office: 'Office',
     currentWorkplaces: 'Current Workplaces',
-    phone: '+995 599 43 66 77',
-    landline: '+995 032 2 52 05 25',
-    email: 'mamuka_khoshtaria@yahoo.com',
+    phone: '+995 596 09 10 00',
+    landline: '',
+    email: 'futkaradzegiorgi@gmail.com',
     clinics: {
-      openHeart: 'Open Heart - University Hospital',
-      barbara: 'Barbara Reproductive Health Clinic'
+      openHeart: 'Batumi Medical Center (Batumi)',
+      barbara: 'Nuralidze Uniquemed (Kutaisi)'
     },
     hours: 'Monday - Friday: 9:00 AM - 6:00 PM',
     appointments: 'Appointments available',
   },
   footer: {
-    copyright: '© {year} Dr. Mamuka Khoshtaria. All rights reserved.',
+    copyright: '© {year} Dr. Giorgi Putkaradze. All rights reserved.',
   },
   aiChat: {
     title: 'AI Medical Assistant',
@@ -98,12 +98,12 @@ export const en = {
       general: 'General medical information and guidelines',
       symptoms: 'Common symptoms and conditions',
       recommendations: 'Basic health recommendations',
-      pregnancy: 'Pregnancy and women\'s health information'
+      pregnancy: 'Traumatology and orthopedics information'
     },
     disclaimer: 'Please note: The AI provides general information only and should not replace professional medical advice.',
     askDoctor: {
-      title: 'Ask Dr. Khoshtaria',
-      description: 'Have a specific question for Dr. Khoshtaria? Leave your question here, and the doctor will personally review and respond to your inquiry during business hours. You can also attach relevant medical documents to help the doctor better understand your situation.',
+      title: 'Ask Dr. Putkaradze',
+      description: 'Have a specific question for Dr. Putkaradze? Leave your question here, and the doctor will personally review and respond to your inquiry during business hours. You can also attach relevant medical documents to help the doctor better understand your situation.',
       instructions: {
         title: 'How to Ask a Question',
         steps: 'Provide your contact information so we can reach you\nWrite your medical question in detail\nAttach relevant medical documents (optional)\nSubmit your question and wait for response via email'
@@ -135,7 +135,7 @@ export const en = {
       error: 'There was an error submitting your question. Please try again.',
       success: {
         title: 'Thank you for your question!',
-        message: 'Dr. Khoshtaria will review and respond to your inquiry via email as soon as possible.',
+        message: 'Dr. Putkaradze will review and respond to your inquiry via email as soon as possible.',
         askAnother: 'Ask another question'
       }
     }
@@ -155,7 +155,7 @@ export const en = {
       expertSupport: 'Expert Support',
       available: '24/7 Available'
     },
-    welcome: 'Ask me any medical questions based on Dr. Khoshtaria\'s expertise',
+    welcome: 'Ask me any medical questions based on Dr. Putkaradze\'s expertise',
     placeholder: 'Type your question here...',
     error: 'I apologize, but I\'m having trouble connecting. Please try again.',
     online: 'Online',

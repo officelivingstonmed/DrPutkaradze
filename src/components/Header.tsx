@@ -34,7 +34,7 @@ export function Header() {
               to="/" 
               className="font-mono text-xl font-semibold text-white hover:text-cyan-300 transition-colors tracking-brutalist uppercase"
             >
-              Dr. Khoshtaria
+              {t('header.title')}
             </Link>
             <nav className="hidden md:flex ml-10 space-x-8">
               {navItems.map((item) => (

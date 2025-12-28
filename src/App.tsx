@@ -122,7 +122,7 @@ function Home() {
               className="relative flex justify-center md:justify-end h-[500px] md:h-[600px] w-full overflow-visible"
             >
               <img
-                src="https://i.imgur.com/KZ61nmg.png"
+                src="/doctor-putkaradze.jpg"
                 alt={t('hero.title')}
                 className="h-full w-auto max-w-none object-contain object-right scale-125 md:translate-x-12 -translate-y-16 md:-translate-y-24"
               />

@@ -20,7 +20,7 @@ export function AdminLogin() {
       if (adminSession) {
         try {
           const session = JSON.parse(adminSession);
-          if (session && session.isAdmin && session.user?.email?.toLowerCase() === 'mamuka_khoshtaria@yahoo.com') {
+          if (session && session.isAdmin && session.user?.email?.toLowerCase() === 'futkaradzegiorgi@gmail.com') {
             navigate('/admin');
             return;
           }
@@ -50,8 +50,8 @@ export function AdminLogin() {
       const trimmedEmail = email.trim();
       const trimmedPassword = password;
       
-      if (trimmedEmail.toLowerCase() === 'mamuka_khoshtaria@yahoo.com'.toLowerCase() && 
-          trimmedPassword === 'Dr.Khoshtaria@') {
+      if (trimmedEmail.toLowerCase() === 'futkaradzegiorgi@gmail.com'.toLowerCase() &&
+          trimmedPassword === 'Dba545c5fde36242@') {
         console.log('Credentials match our admin credentials');
         
         // Create a custom session
