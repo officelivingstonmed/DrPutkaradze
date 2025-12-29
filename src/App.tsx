@@ -318,7 +318,7 @@ function Home() {
                 {t('nav.about')}
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-white">
-                სამედიცინო გამოცდილება
+                {t('about.sectionTitle')}
               </h2>
               <div className="mt-4 mx-auto w-24 h-1 bg-gradient-to-r from-cyan-500 to-teal-400 rounded-full" />
             </motion.div>
@@ -365,15 +365,15 @@ function Home() {
             >
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>სერტიფიცირებული სპეციალისტი</span>
+                <span>{t('about.certifiedSpecialist')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-cyan-400" />
-                <span>AO მეთოდოლოგია</span>
+                <span>{t('about.aoMethodology')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-blue-400" />
-                <span>საერთაშორისო სტანდარტები</span>
+                <span>{t('about.internationalStandards')}</span>
               </div>
             </motion.div>
           </div>

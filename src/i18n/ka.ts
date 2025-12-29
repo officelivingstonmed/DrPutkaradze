@@ -30,6 +30,12 @@ export const ka = {
     subtitle: 'აღიარებული სპეციალისტი ტრავმა-ორთოპედიის დარგში',
     cta: 'ჩაეწერეთ ვიზიტზე',
   },
+  about: {
+    sectionTitle: 'სამედიცინო გამოცდილება',
+    certifiedSpecialist: 'სერტიფიცირებული სპეციალისტი',
+    aoMethodology: 'AO მეთოდოლოგია',
+    internationalStandards: 'საერთაშორისო სტანდარტები',
+  },
   stats: {
     childbirths: {
       number: '5,000+',

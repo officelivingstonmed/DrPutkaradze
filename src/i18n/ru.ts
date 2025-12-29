@@ -30,6 +30,12 @@ export const ru = {
     subtitle: 'Признанный специалист в области травматологии и ортопедии',
     cta: 'Записаться на прием',
   },
+  about: {
+    sectionTitle: 'Медицинский опыт',
+    certifiedSpecialist: 'Сертифицированный специалист',
+    aoMethodology: 'Методология AO',
+    internationalStandards: 'Международные стандарты',
+  },
   stats: {
     childbirths: {
       number: '5,000+',

@@ -30,6 +30,12 @@ export const en = {
     subtitle: 'Renowned Specialist in Trauma-Orthopedics',
     cta: 'Book Appointment',
   },
+  about: {
+    sectionTitle: 'Medical Experience',
+    certifiedSpecialist: 'Certified Specialist',
+    aoMethodology: 'AO Methodology',
+    internationalStandards: 'International Standards',
+  },
   stats: {
     childbirths: {
       number: '5,000+',
