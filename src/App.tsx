@@ -10,6 +10,7 @@ import { Admin } from './pages/Admin';
 import { AdminLogin } from './pages/AdminLogin';
 import { ChatHistory } from './pages/ChatHistory';
 import { Education } from './pages/Education';
+import { Gallery } from './pages/Gallery';
 import { useLanguage } from './contexts/LanguageContext';
 import { useLocation } from 'react-router-dom';
 // 🎨 Stagewise Toolbar Integration - Visual vibe coding
@@ -815,6 +816,7 @@ function App() {
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/chat-history" element={<ChatHistory />} />
         <Route path="/education" element={<Education />} />
+        <Route path="/gallery" element={<Gallery />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>

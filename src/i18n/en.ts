@@ -4,10 +4,15 @@ export const en = {
   },
   nav: {
     about: 'About',
+    gallery: 'Gallery',
     services: 'Services',
     education: 'Educational Resources',
     askDoctor: 'Ask Doctor',
     contact: 'Contact'
+  },
+  gallery: {
+    title: 'Gallery',
+    subtitle: 'Photos from our medical practice and patient care',
   },
   education: {
     title: 'Educational Resources',

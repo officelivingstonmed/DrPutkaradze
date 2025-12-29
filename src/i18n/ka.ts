@@ -4,10 +4,15 @@ export const ka = {
   },
   nav: {
     about: 'ექიმის შესახებ',
+    gallery: 'გალერეა',
     services: 'სერვისები',
     education: 'საგანმანათლებლო რესურსები',
     askDoctor: 'შეეკითხეთ ექიმს',
     contact: 'კონტაქტი'
+  },
+  gallery: {
+    title: 'გალერეა',
+    subtitle: 'ფოტოები ჩვენი სამედიცინო პრაქტიკიდან',
   },
   education: {
     title: 'საგანმანათლებლო რესურსები',

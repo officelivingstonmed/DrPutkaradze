@@ -4,10 +4,15 @@ export const ru = {
   },
   nav: {
     about: 'О нас',
+    gallery: 'Галерея',
     services: 'Услуги',
     education: 'Образовательные ресурсы',
     askDoctor: 'Спросить Доктора',
     contact: 'Контакты'
+  },
+  gallery: {
+    title: 'Галерея',
+    subtitle: 'Фотографии из нашей медицинской практики',
   },
   education: {
     title: 'Образовательные ресурсы',
