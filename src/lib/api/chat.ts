@@ -2,9 +2,9 @@ import { FlowiseRequest, Attachment, FlowiseUpload } from '../../types/chat';
 import { convertAttachmentToFlowiseUpload } from '../../utils/fileUpload';
 
 // Use proxy URL in development, direct URL in production
-const API_URL = import.meta.env.DEV 
-  ? "/api/flowise/api/v1/prediction/b4fd6d68-19cd-4449-8be8-1f80c2d791bf"
-  : "https://flowise-2-0.onrender.com/api/v1/prediction/b4fd6d68-19cd-4449-8be8-1f80c2d791bf";
+const API_URL = import.meta.env.DEV
+  ? "/api/flowise/api/v1/prediction/782b142d-3035-428c-90dd-5b83d92dd876"
+  : "https://flowise-2-0.onrender.com/api/v1/prediction/782b142d-3035-428c-90dd-5b83d92dd876";
 
 export interface ChatApiResponse {
   text: string;

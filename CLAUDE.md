@@ -2,6 +2,22 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Project Overview
+
+**Dr. Giorgi Putkaradze - Trauma-Orthopedist Website**
+
+A medical practice website for Dr. Giorgi Putkaradze, a specialist in trauma-orthopedics. The site provides:
+- Information about trauma and orthopedic services (fractures, joint replacements, sports injuries, rehabilitation)
+- AI-powered medical assistant for trauma-orthopedics queries
+- Patient communication interface ("Ask Doctor" feature)
+- Multi-language support (Georgian, English, Russian)
+- Educational resources for orthopedic topics
+
+**Contact Info:**
+- Email: futkaradzegiorgi@gmail.com
+- Phone: +995 596 09 10 00
+- Clinics: Batumi Medical Center, Nuralidze Uniquemed (Kutaisi)
+
 ## Development Commands
 
 ### Core Development
@@ -99,10 +115,10 @@ VITE_FLOWISE_API_URL=your_flowise_api_url
 - Session management and error recovery
 
 ### Stagewise Toolbar (Development)
-- Visual development tool integration with medical-specific context
+- Visual development tool integration with trauma-orthopedics context
 - Component detection for React components and medical forms
 - Screenshot capabilities with high-resolution output
-- Configuration in `stagewise.config.js` with custom selectors for medical forms
+- Configuration in `stagewise.config.js` with custom selectors for orthopedic consultation forms
 
 ## File Structure Notes
 
@@ -152,7 +168,7 @@ This codebase handles advanced character encoding scenarios, especially for Geor
 - OCR results may need post-processing for multi-language documents
 
 ### PDF Processing Optimization
-The system is optimized for medical document processing:
+The system is optimized for medical document processing (X-rays, MRI reports, orthopedic assessments):
 - Client-side processing reduces server load and improves performance
 - Token usage optimization (95%+ reduction) crucial for AI API costs
 - Font analysis helps determine best extraction approach for each PDF

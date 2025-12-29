@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Send, Bot, Loader2, Clock, Check, Image as ImageIcon, Smile, Paperclip, X, User, ChevronDown, Info, HelpCircle, Moon, Sun, History, ArrowLeft, Trash2, AlertCircle, FileText, File, FileImage, Plus, Edit } from 'lucide-react';
+import { Send, Bot, Loader2, Clock, Check, Image as ImageIcon, Smile, Paperclip, X, User, ChevronDown, Info, HelpCircle, History, ArrowLeft, Trash2, AlertCircle, FileText, File, FileImage, Plus, Edit } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { marked } from 'marked';
 import DOMPurify from 'dompurify';
@@ -39,8 +39,12 @@ function renderMarkdown(content: string, isDarkMode: boolean) {
   const html = marked(content) as string;
   const sanitizedHtml = DOMPurify.sanitize(html);
   return (
-    <div 
-      className={`markdown-content prose ${isDarkMode ? 'prose-invert' : ''} max-w-none`}
+    <div
+      className={`markdown-content prose max-w-none ${
+        isDarkMode
+          ? 'prose-invert'
+          : 'prose-slate prose-p:text-gray-700 prose-headings:text-gray-900 prose-strong:text-gray-900 prose-li:text-gray-700'
+      }`}
       dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
     />
   );
@@ -53,7 +57,7 @@ interface ChatBotProps {
 export function ChatBot({ embedded = false }: ChatBotProps) {
   const [input, setInput] = useState('');
   const [sessionId, setSessionId] = useState<string>('');
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const isDarkMode = true; // Always dark mode
   const [isExpanded, setIsExpanded] = useState(true);
   const [shouldScroll, setShouldScroll] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
@@ -343,10 +347,7 @@ export function ChatBot({ embedded = false }: ChatBotProps) {
     setIsExpanded(!isExpanded);
   };
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
+  
   const clearChat = () => {
     setMessages([]);
     clearAttachments();
@@ -389,7 +390,7 @@ export function ChatBot({ embedded = false }: ChatBotProps) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Medical Response - Dr. Khoshtaria</title>
+        <title>Medical Response - Dr. Putkaradze</title>
         <style>
             body {
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -496,7 +497,7 @@ export function ChatBot({ embedded = false }: ChatBotProps) {
     </head>
     <body>
         <div class="header">
-            <h1>Dr. Khoshtaria Medical Platform</h1>
+            <h1>Dr. Putkaradze Medical Platform</h1>
             <p>Professional Medical Consultation Response</p>
         </div>
         
@@ -544,7 +545,7 @@ export function ChatBot({ embedded = false }: ChatBotProps) {
         </div>
 
         <div class="footer">
-            <strong>Dr. Khoshtaria Medical Platform</strong><br>
+            <strong>Dr. Putkaradze Medical Platform</strong><br>
             Professional Healthcare Consultation Services<br>
             <em>This email was generated on ${new Date().toLocaleDateString()}</em>
         </div>
@@ -679,16 +680,6 @@ export function ChatBot({ embedded = false }: ChatBotProps) {
                 >
                   <History className="w-4 h-4" />
                 </button>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    toggleDarkMode();
-                  }}
-                  className="text-white/80 hover:text-white p-1.5 rounded-full hover:bg-white/10 transition-all"
-                  aria-label="Toggle Theme"
-                >
-                  {isDarkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-                </button>
                 {!embedded && (
                   <button
                     onClick={(e) => {
@@ -747,16 +738,16 @@ export function ChatBot({ embedded = false }: ChatBotProps) {
                 <button
                   onClick={() => setShowHistory(false)}
                   className={`flex items-center text-sm px-3 py-1.5 rounded-lg transition-colors ${
-                    isDarkMode 
-                      ? 'bg-dark-700 text-dark-100 hover:bg-dark-600 hover:text-white' 
+                    isDarkMode
+                      ? 'bg-dark-700 text-dark-100 hover:bg-dark-600 hover:text-white'
                       : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                   }`}
                 >
                   <ArrowLeft className="w-4 h-4 mr-1" />
-                  Back to Chat
+                  {t('chatHistory.backToChat')}
                 </button>
                 <h3 className={`font-medium ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
-                  Chat History
+                  {t('chatHistory.title')}
                 </h3>
               </div>
 
@@ -777,7 +768,7 @@ export function ChatBot({ embedded = false }: ChatBotProps) {
                 </div>
               ) : chatSessions.length === 0 ? (
                 <div className={`text-center py-8 ${isDarkMode ? 'text-dark-200' : 'text-gray-500'}`}>
-                  No previous conversations found.
+                  {t('chatHistory.noConversations')}
                 </div>
               ) : (
                 <div className="space-y-2">
@@ -805,23 +796,23 @@ export function ChatBot({ embedded = false }: ChatBotProps) {
                         <button
                           onClick={() => loadChatSession(session.id)}
                           className={`text-xs px-2 py-1 rounded ${
-                            isDarkMode 
-                              ? 'bg-cyan-600/20 text-cyan-300 hover:bg-cyan-600/30' 
+                            isDarkMode
+                              ? 'bg-cyan-600/20 text-cyan-300 hover:bg-cyan-600/30'
                               : 'bg-cyan-100 text-cyan-700 hover:bg-cyan-200'
                           }`}
                         >
-                          View
+                          {t('chatHistory.view')}
                         </button>
                         <button
                           onClick={() => {
-                            if (window.confirm('Are you sure you want to delete this conversation? This action cannot be undone.')) {
+                            if (window.confirm(t('chatHistory.deleteConfirmation'))) {
                               deleteChatSession(session.id);
                             }
                           }}
                           disabled={deletingSession === session.id}
                           className={`text-xs px-2 py-1 rounded flex items-center ${
-                            isDarkMode 
-                              ? 'bg-red-900/20 text-red-300 hover:bg-red-900/30' 
+                            isDarkMode
+                              ? 'bg-red-900/20 text-red-300 hover:bg-red-900/30'
                               : 'bg-red-100 text-red-700 hover:bg-red-200'
                           } disabled:opacity-50`}
                         >
@@ -830,7 +821,7 @@ export function ChatBot({ embedded = false }: ChatBotProps) {
                           ) : (
                             <Trash2 className="w-3 h-3 mr-1" />
                           )}
-                          Delete
+                          {t('chatHistory.delete')}
                         </button>
                       </div>
                     </div>
@@ -871,12 +862,12 @@ export function ChatBot({ embedded = false }: ChatBotProps) {
                       <div
                         className={`rounded-2xl p-3.5 ${
                           message.type === 'user'
-                            ? isDarkMode 
+                            ? isDarkMode
                               ? 'bg-gradient-to-r from-cyan-500 to-cyan-400 text-white ml-2'
-                              : 'bg-gradient-to-r from-cyan-400 to-cyan-300 text-white ml-2'
+                              : 'bg-gradient-to-r from-cyan-600 to-cyan-500 text-white ml-2'
                             : isDarkMode
                               ? 'bg-dark-700 text-dark-100'
-                              : 'bg-white text-gray-800 border border-gray-200'
+                              : 'bg-white text-gray-800 border border-gray-200 shadow-md'
                         } animate-fadeSlideIn shadow-sm`}
                       >
                         {message.type === 'bot' ? (
@@ -964,10 +955,10 @@ export function ChatBot({ embedded = false }: ChatBotProps) {
                     <div className={`rounded-2xl p-3.5 ${
                       isDarkMode
                         ? 'bg-dark-700 text-dark-100'
-                        : 'bg-white text-gray-800 border border-gray-200'
+                        : 'bg-white text-gray-700 border border-gray-200 shadow-md'
                     } animate-fadeSlideIn shadow-sm`}>
                       <div className="flex items-center space-x-2">
-                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <Loader2 className={`w-4 h-4 animate-spin ${isDarkMode ? 'text-cyan-400' : 'text-cyan-600'}`} />
                         <span>{t('chat.thinking')}</span>
                       </div>
                     </div>

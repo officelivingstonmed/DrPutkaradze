@@ -4,8 +4,10 @@ import { motion } from 'framer-motion';
 import { Lock, User, ArrowLeft, AlertCircle, Eye, EyeOff } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export function AdminLogin() {
+  const { t } = useLanguage();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
@@ -110,7 +112,7 @@ export function AdminLogin() {
           className="flex items-center text-dark-100 hover:text-cyan-300 transition-colors"
         >
           <ArrowLeft className="w-5 h-5 mr-1" />
-          Back to Home
+          {t('admin.backToHome')}
         </Link>
       </div>
 
@@ -118,15 +120,15 @@ export function AdminLogin() {
         <div className="w-full max-w-md">
           <div className="bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-dark-700/30 shadow-xl p-8">
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold text-white mb-2">Admin Portal</h2>
-              <p className="text-dark-100">Sign in to access the admin dashboard</p>
+              <h2 className="text-2xl font-bold text-white mb-2">{t('admin.portal')}</h2>
+              <p className="text-dark-100">{t('admin.signInSubtitle')}</p>
             </div>
 
             {error && (
               <div className="mb-6 bg-red-900/20 border border-red-400/30 rounded-lg p-4 text-red-300 text-sm flex items-start">
                 <AlertCircle className="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold mb-1">Authentication Error</p>
+                  <p className="font-semibold mb-1">{t('admin.authError')}</p>
                   <p>{error}</p>
                 </div>
               </div>
@@ -142,7 +144,7 @@ export function AdminLogin() {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Email address"
+                    placeholder={t('admin.email')}
                     required
                     className="w-full pl-10 pr-4 py-3 rounded-lg bg-dark-700/50 backdrop-blur-sm border border-dark-600/30 text-white placeholder-dark-300 focus:ring-2 focus:ring-cyan-400/30 focus:border-transparent transition-all duration-300"
                   />
@@ -156,7 +158,7 @@ export function AdminLogin() {
                     type={showPassword ? "text" : "password"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Password"
+                    placeholder={t('admin.password')}
                     required
                     className="w-full pl-10 pr-12 py-3 rounded-lg bg-dark-700/50 backdrop-blur-sm border border-dark-600/30 text-white placeholder-dark-300 focus:ring-2 focus:ring-cyan-400/30 focus:border-transparent transition-all duration-300"
                   />
@@ -181,7 +183,7 @@ export function AdminLogin() {
                     <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent"></div>
                   </div>
                 ) : (
-                  'Sign In'
+                  t('admin.signIn')
                 )}
                 <div className="absolute inset-0 bg-gradient-radial from-cyan-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </button>
@@ -189,8 +191,8 @@ export function AdminLogin() {
 
             {/* Credential hint */}
             <div className="mt-6 p-4 bg-dark-700/30 rounded-lg">
-              <h3 className="text-cyan-300 font-semibold mb-2 text-sm">Admin Access</h3>
-              <p className="text-xs text-dark-300">Only authorized personnel can access this area. Please contact the system administrator if you need access.</p>
+              <h3 className="text-cyan-300 font-semibold mb-2 text-sm">{t('admin.portal')}</h3>
+              <p className="text-xs text-dark-300">{t('admin.accessInfo')}</p>
             </div>
           </div>
         </div>

@@ -169,4 +169,59 @@ export const en = {
       location: 'Where is your clinic located?'
     }
   },
+  admin: {
+    portal: 'Admin Portal',
+    login: 'Admin Login',
+    signIn: 'Sign In',
+    signingIn: 'Signing In...',
+    email: 'Email address',
+    password: 'Password',
+    backToHome: 'Back to Home',
+    signInSubtitle: 'Sign in to access the admin dashboard',
+    authError: 'Authentication Error',
+    accessInfo: 'Only authorized personnel can access this area. Please contact the system administrator if you need access.'
+  },
+  chatHistory: {
+    backToChat: 'Back to Chat',
+    title: 'Chat History',
+    noConversations: 'No previous conversations found.',
+    view: 'View',
+    delete: 'Delete',
+    deleteConfirmation: 'Are you sure you want to delete this conversation? This action cannot be undone.'
+  },
+  response: {
+    respondToPatient: 'Respond to Patient',
+    patientQuestion: 'Patient Question:',
+    aiResponse: 'AI Generated Response:',
+    placeholder: 'Edit or write your response here...',
+    downloadPdf: 'Download PDF',
+    cancel: 'Cancel',
+    send: 'Send'
+  },
+  email: {
+    title: 'Medical Response - Dr. Putkaradze',
+    header: 'Dr. Putkaradze Medical Platform',
+    subheader: 'Professional Medical Consultation Response',
+    patientInfo: 'Patient Information',
+    yourQuestion: 'Your Question',
+    medicalResponse: 'Medical Response',
+    footer: 'Professional Healthcare Consultation Services',
+    generated: 'Generated'
+  },
+  locations: {
+    tbilisiGeorgia: 'Tbilisi, Georgia'
+  },
+  adminGuidelines: {
+    title: 'How to Respond',
+    subtitle: 'Follow these steps when answering patient questions',
+    steps: {
+      step1: 'Read the question and attachments',
+      step2: 'Ask AI assistant for help if needed',
+      step3: 'Click "Respond" to open the response form',
+      step4: 'Edit or write your response',
+      step5: 'Click "Send" to email the patient'
+    },
+    collapse: 'Hide',
+    expand: 'Show'
+  }
 };
