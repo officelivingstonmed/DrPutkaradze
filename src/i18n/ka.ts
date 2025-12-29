@@ -3,7 +3,7 @@ export const ka = {
     title: 'ექიმი ფუტკარაძე',
   },
   nav: {
-    about: 'ჩვენს შესახებ',
+    about: 'ექიმის შესახებ',
     services: 'სერვისები',
     education: 'საგანმანათლებლო რესურსები',
     askDoctor: 'შეეკითხეთ ექიმს',
