@@ -5,7 +5,7 @@ import {
   MessageSquare, LogOut, ChevronDown, Clock, Filter, Trash2,
   FileText, Image as ImageIcon, File, Download, FileDown, History,
   Sparkles, Bot, Users, CheckCircle2, AlertTriangle, Search, RefreshCw,
-  BookOpen
+  BookOpen, Newspaper
 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -14,6 +14,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { ResponseForm } from '../components/admin/ResponseForm';
 import { AudioPlayer } from '../components/admin/AudioPlayer';
 import { generatePDF } from '../components/admin/PDFGenerator';
+import { PostsList } from '../components/admin/PostsList';
 import { Question } from '../types/admin';
 import DOMPurify from 'dompurify';
 import { marked } from 'marked';
@@ -71,6 +72,7 @@ export function Admin() {
   const [searchQuery, setSearchQuery] = useState('');
   const [refreshing, setRefreshing] = useState(false);
   const [showGuidelines, setShowGuidelines] = useState(true);
+  const [activeSection, setActiveSection] = useState<'questions' | 'posts'>('questions');
   const navigate = useNavigate();
   const { language } = useLanguage();
 
@@ -113,6 +115,9 @@ export function Admin() {
     step3: language === 'ka' ? 'დააჭირეთ "პასუხი" ღილაკს' : language === 'ru' ? 'Нажмите "Ответить" чтобы открыть форму' : 'Click "Respond" to open the response form',
     step4: language === 'ka' ? 'დაწერეთ ან შეცვალეთ პასუხი' : language === 'ru' ? 'Напишите или отредактируйте ответ' : 'Edit or write your response',
     step5: language === 'ka' ? 'დააჭირეთ "გაგზავნა" პაციენტისთვის გასაგზავნად' : language === 'ru' ? 'Нажмите "Отправить" для отправки пациенту' : 'Click "Send" to email the patient',
+    // Tab translations
+    questionsTab: language === 'ka' ? 'კითხვები' : language === 'ru' ? 'Вопросы' : 'Questions',
+    postsTab: language === 'ka' ? 'სიახლეები' : language === 'ru' ? 'Новости' : 'News',
   };
 
   const toggleExpanded = (id: string) => {
@@ -529,6 +534,51 @@ export function Admin() {
             </div>
           </motion.section>
 
+          {/* Section Tabs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="flex gap-2 mb-8"
+          >
+            <button
+              onClick={() => setActiveSection('questions')}
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium transition-all ${
+                activeSection === 'questions'
+                  ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30'
+                  : 'bg-slate-800/50 text-slate-400 hover:text-white border border-slate-700/50 hover:border-slate-600/50'
+              }`}
+            >
+              <MessageSquare className="w-4 h-4" />
+              <span>{t.questionsTab}</span>
+            </button>
+            <button
+              onClick={() => setActiveSection('posts')}
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium transition-all ${
+                activeSection === 'posts'
+                  ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30'
+                  : 'bg-slate-800/50 text-slate-400 hover:text-white border border-slate-700/50 hover:border-slate-600/50'
+              }`}
+            >
+              <Newspaper className="w-4 h-4" />
+              <span>{t.postsTab}</span>
+            </button>
+          </motion.div>
+
+          {/* Posts Section */}
+          {activeSection === 'posts' && (
+            <motion.section
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="bg-slate-900/60 backdrop-blur-sm border border-slate-800/50 rounded-xl p-6"
+            >
+              <PostsList />
+            </motion.section>
+          )}
+
+          {/* Questions Section */}
+          {activeSection === 'questions' && (
+          <>
           {/* Stats Section */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
@@ -933,6 +983,8 @@ export function Admin() {
               )}
             </div>
           </motion.section>
+          </>
+          )}
         </div>
       </main>
 

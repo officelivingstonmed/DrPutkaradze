@@ -7,12 +7,50 @@ export const en = {
     gallery: 'Gallery',
     services: 'Services',
     education: 'Educational Resources',
+    news: 'News',
     askDoctor: 'Ask Doctor',
     contact: 'Contact'
   },
   gallery: {
     title: 'Gallery',
     subtitle: 'Photos from our medical practice and patient care',
+  },
+  news: {
+    title: 'News',
+    subtitle: 'Latest updates and articles from Dr. Putkaradze',
+    readMore: 'Read More',
+    backToNews: 'Back to News',
+    publishedOn: 'Published on',
+    noPosts: 'No news articles available yet.',
+    admin: {
+      title: 'News Management',
+      subtitle: 'Create and manage news posts',
+      totalPosts: 'Total Posts',
+      published: 'Published',
+      drafts: 'Drafts',
+      createPost: 'Create Post',
+      editPost: 'Edit Post',
+      deletePost: 'Delete Post',
+      deleteConfirm: 'Are you sure you want to delete this post?',
+      form: {
+        titleEn: 'Title (English)',
+        titleKa: 'Title (Georgian)',
+        titleRu: 'Title (Russian)',
+        contentEn: 'Content (English)',
+        contentKa: 'Content (Georgian)',
+        contentRu: 'Content (Russian)',
+        image: 'Featured Image',
+        uploadImage: 'Upload Image',
+        changeImage: 'Change Image',
+        removeImage: 'Remove Image',
+        publish: 'Publish',
+        saveDraft: 'Save as Draft',
+        cancel: 'Cancel',
+        save: 'Save',
+        publishing: 'Publishing...',
+        saving: 'Saving...'
+      }
+    }
   },
   education: {
     title: 'Educational Resources',
